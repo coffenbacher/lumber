@@ -65,12 +65,16 @@ function Database() {
     };
 
     if (options.dbConnectionUrl) {
+      console.log(options)
+      console.log(connectionOptionsSequelize)
       connection = new Sequelize(options.dbConnectionUrl, connectionOptionsSequelize);
     } else {
       connectionOptionsSequelize.host = options.dbHostname;
       connectionOptionsSequelize.port = options.dbPort;
       connectionOptionsSequelize.dialect = databaseDialect;
 
+      console.log("else")
+      console.log(options)
       connection = new Sequelize(
         options.dbName, options.dbUser,
         options.dbPassword, connectionOptionsSequelize,
