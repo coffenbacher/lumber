@@ -45,6 +45,9 @@ program
 
   config.dbSchema = process.env.DATABASE_SCHEMA;
 
+  config.ssl = true
+  config.isSsl = true
+  
   const connection = await new Database().connect(config);
   const schema = await new DatabaseAnalyzer(connection, config).perform();
   const migrator = new Migrator(config);
