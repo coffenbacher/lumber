@@ -15,7 +15,7 @@ function Database() {
   }
 
   this.connect = (options) => {
-    const isSSL = options.dbSSL || options.ssl;
+    const isSSL = true;
     let connection;
     let databaseDialect;
 
