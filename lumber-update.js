@@ -25,6 +25,7 @@ program
   if (process.env.DATABASE_URL) {
     config = await Prompter(program, [
       'dbConnectionUrl',
+      'ssl',
     ]);
   } else {
     logger.error(
